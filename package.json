@@ -11,7 +11,7 @@
     "powershell",
     "windows",
     "ps1",
-    "ps",
+    "ps"
   ],
   "main": "lib/provider.js",
   "engines": {
