@@ -27,7 +27,7 @@ Before you can build, select an active target with your preferred build option.
 
 Available targets:
 
-* `PowerShell: Run script`
+* `PowerShell` — runs PowerShell script
 
 ### Shortcuts
 
