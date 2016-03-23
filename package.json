@@ -1,0 +1,43 @@
+{
+  "name": "build-powershell",
+  "version": "0.0.0",
+  "description": "Atom Build provider for Windows PowerShell, runs PowerShell scripts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/idleberg/atom-build-powershell.git"
+  },
+  "license": "MIT",
+  "keywords": [
+    "powershell",
+    "windows",
+    "ps1",
+    "ps",
+  ],
+  "main": "lib/provider.js",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "providedServices": {
+    "builder": {
+      "description": "Runs PowerShell scripts",
+      "versions": {
+        "2.0.0": "provideBuilder"
+      }
+    }
+  },
+  "devDependencies": {
+    "babel-eslint": "^5.0.0",
+    "eslint": "^2.4.0",
+    "eslint-config-atom-build": "^2.0.0",
+    "gulp": "^3.9.1",
+    "gulp-coffeelint": "^0.6.0",
+    "gulp-debug": "^2.1.2",
+    "gulp-jshint": "^2.0.0",
+    "gulp-jsonlint": "^1.1.2",
+    "gulp-recess": "^1.2.0",
+    "jshint": "^2.9.1"
+  },
+  "scripts": {
+    "test": "gulp lint"
+  }
+}
