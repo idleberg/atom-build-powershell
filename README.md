@@ -1,10 +1,10 @@
+# build-powershell
+
 [![apm](https://img.shields.io/apm/l/build-powershell.svg?style=flat-square)](https://atom.io/packages/build-powershell)
 [![apm](https://img.shields.io/apm/v/build-powershell.svg?style=flat-square)](https://atom.io/packages/build-powershell)
 [![apm](https://img.shields.io/apm/dm/build-powershell.svg?style=flat-square)](https://atom.io/packages/build-powershell)
 [![Travis](https://img.shields.io/travis/idleberg/atom-build-powershell.svg?style=flat-square)](https://travis-ci.org/idleberg/atom-build-powershell)
 [![David](https://img.shields.io/david/dev/idleberg/atom-build-powershell.svg?style=flat-square)](https://david-dm.org/idleberg/atom-build-powershell#info=devDependencies)
-
-# build-powershell
 
 [Atom Build](https://atombuild.github.io/) provider for Windows PowerShell, runs PowerShell scripts
 
