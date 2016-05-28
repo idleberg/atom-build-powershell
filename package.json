@@ -11,7 +11,9 @@
     "powershell",
     "windows",
     "ps1",
-    "ps"
+    "ps",
+    "linter",
+    "lint"
   ],
   "main": "lib/provider.js",
   "engines": {
