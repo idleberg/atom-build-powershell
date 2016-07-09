@@ -20,9 +20,19 @@ Install `build-powershell` from Atom's [Package Manager](http://flight-manual.at
 
 Change to your Atom packages directory:
 
-`$ cd %USERPROFILE%\.atom\packages`
+```bash
+# Windows
+$ cd %USERPROFILE%\.atom\packages
 
-`$ git clone https://github.com/idleberg/atom-build-powershell build-powershell`
+# Mac OS X & Linux
+$ cd ~/.atom/packages/
+```
+
+Clone repository as `build-powershell`:
+
+```bash
+$ git clone https://github.com/idleberg/atom-build-powershell build-powershell
+```
 
 ## Usage
 
