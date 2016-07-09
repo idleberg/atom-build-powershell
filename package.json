@@ -1,19 +1,17 @@
 {
-  "name": "build-powershell",
-  "version": "0.3.2",
-  "description": "Atom Build provider for Windows PowerShell, runs PowerShell scripts",
+  "name": "build-cmd",
+  "version": "0.0.0",
+  "description": "Atom Build provider for the Windows Command Prompt, runs Batch scripts",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/idleberg/atom-build-powershell.git"
+    "url": "git+https://github.com/idleberg/atom-build-cmd.git"
   },
   "license": "MIT",
   "keywords": [
-    "powershell",
+    "batch",
     "windows",
-    "ps1",
-    "ps",
-    "linter",
-    "lint"
+    "cmd",
+    "bat"
   ],
   "main": "lib/provider.js",
   "engines": {
@@ -21,7 +19,7 @@
   },
   "providedServices": {
     "builder": {
-      "description": "Runs PowerShell scripts",
+      "description": "Runs Batch scripts",
       "versions": {
         "2.0.0": "provideBuilder"
       }
