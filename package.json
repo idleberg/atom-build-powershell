@@ -1,6 +1,6 @@
 {
   "name": "build-powershell",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "description": "Atom Build provider for Windows PowerShell, runs PowerShell scripts",
   "repository": {
     "type": "git",
