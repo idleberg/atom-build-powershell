@@ -58,6 +58,3 @@ This work is licensed under the [The MIT License](LICENSE.md).
 ## Donate
 
 You are welcome support this project using [Flattr](https://flattr.com/submit/auto?user_id=idleberg&url=https://github.com/idleberg/atom-build-powershell) or Bitcoin `17CXJuPsmhuTzFV2k4RKYwpEHVjskJktRd`
-
-[osascript]: https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man1/osascript.1.html
-[osacompile]: https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man1/osacompile.1.html
