@@ -38,8 +38,8 @@ $ git clone https://github.com/idleberg/atom-build-powershell build-powershell
 Install Node dependencies:
 
 ```bash
-cd build-powershell
-npm install
+$ cd build-powershell
+$ npm install
 ```
 
 ## Usage
