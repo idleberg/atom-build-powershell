@@ -35,10 +35,9 @@ Clone repository as `build-powershell`:
 $ git clone https://github.com/idleberg/atom-build-powershell build-powershell
 ```
 
-Install Node dependencies:
+Inside the cloned directory, install Node dependencies:
 
 ```bash
-$ cd build-powershell
 $ yarn || npm install
 ```
 
