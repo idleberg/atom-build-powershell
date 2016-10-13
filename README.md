@@ -17,7 +17,7 @@ Install `build-powershell` from Atom's [Package Manager](http://flight-manual.at
 
 `$ apm install build-powershell`
 
-### GitHub
+### Using Git
 
 Change to your Atom packages directory:
 
