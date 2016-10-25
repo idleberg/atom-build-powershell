@@ -7,7 +7,7 @@
 [![David](https://img.shields.io/david//idleberg/atom-build-powershell.svg?style=flat-square)](https://david-dm.org/idleberg/atom-build-powershell)
 [![David](https://img.shields.io/david/dev/idleberg/atom-build-powershell.svg?style=flat-square)](https://david-dm.org/idleberg/atom-build-powershell?type=dev)
 
-[Atom Build](https://atombuild.github.io/) provider for Windows PowerShell, runs PowerShell scripts. Supports the [linter](https://atom.io/packages/linter) package for error highlighting.
+[Atom Build](https://atombuild.github.io/) provider for Microsoft PowerShell, runs PowerShell scripts. Supports the [linter](https://atom.io/packages/linter) package for error highlighting.
 
 ## Installation
 
