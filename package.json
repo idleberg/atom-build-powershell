@@ -27,7 +27,7 @@
     }
   },
   "package-deps": [
-    "build"
+    "build-provider"
   ],
   "dependencies": {
     "atom-package-deps": "^4.3.1"
