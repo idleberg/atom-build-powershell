@@ -8,11 +8,11 @@
   },
   "license": "MIT",
   "keywords": [
+    "buildprovider",
     "powershell",
     "ps1",
     "ps",
-    "linter",
-    "lint"
+    "linter"
   ],
   "main": "lib/provider.js",
   "engines": {
