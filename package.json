@@ -1,10 +1,10 @@
 {
   "name": "build-powershell",
-  "version": "0.11.0",
+  "version": "0.10.2",
   "description": "Atom Build provider for Microsoft PowerShell, runs PowerShell scripts",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/idleberg/atom-build-powershell.git"
+    "url": "https://github.com/idleberg/atom-build-powershell.git"
   },
   "license": "MIT",
   "keywords": [
