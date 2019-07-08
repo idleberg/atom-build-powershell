@@ -8,12 +8,20 @@ import { spawn } from 'child_process';
 // Package settings
 import meta from '../package.json';
 
+export function defaultCustomArguments() {
+  if (platform() === 'win32') {
+    return '-NoLogo -NonInteractive -NoProfile -ExecutionPolicy Unrestricted -File {FILE_ACTIVE}';
+  }
+
+  return '-NoLogo -NonInteractive -NoProfile -File {FILE_ACTIVE}';
+}
+
 export const config = {
   customArguments: {
     title: 'Custom Arguments',
     description: 'Specify your preferred arguments for `powershell`, supports [replacement](https://github.com/noseglid/atom-build#replacement) placeholders',
     type: 'string',
-    'default': this.defaultCustomArguments(),
+    default: defaultCustomArguments(),
     order: 0
   },
   manageDependencies: {
@@ -73,14 +81,6 @@ function spawnPromise(cmd, args) {
 
 export function which() {
   return (platform() === 'win32') ? 'where' : 'which';
-}
-
-export function defaultCustomArguments() {
-  if (platform() === 'win32') {
-    return '-NoLogo -NonInteractive -NoProfile -ExecutionPolicy Unrestricted -File {FILE_ACTIVE}';
-  }
-
-  return '-NoLogo -NonInteractive -NoProfile -File {FILE_ACTIVE}';
 }
 
 export function provideBuilder() {
