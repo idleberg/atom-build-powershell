@@ -145,6 +145,6 @@ export function provideBuilder() {
 // This package depends on build, make sure it's installed
 export function activate() {
   if (atom.config.get(`${meta.name}.manageDependencies`) === true) {
-    satisfyDependencies();
+    satisfyDependencies('build-powershell');
   }
 }
