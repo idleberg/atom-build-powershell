@@ -55,10 +55,5 @@
     "hooks": {
       "pre-commit": "npm run lint"
     }
-  },
-  "apmInstallSource": {
-    "type": "git",
-    "source": "https://github.com/idleberg/atom-build-powershell",
-    "sha": "1a8dcdbd91ea59c96d62aabac3bae37880b68090"
   }
 }
