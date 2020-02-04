@@ -1,8 +1,8 @@
 'use babel';
 
 import { EventEmitter } from 'events';
-import { install } from 'atom-package-deps';
 import { platform } from 'os';
+import { satisfyDependencies } from 'atom-satisfy-dependencies';
 import { spawn } from 'child_process';
 
 // Package settings
@@ -39,21 +39,6 @@ export const config = {
     order: 2
   }
 };
-
-export function satisfyDependencies() {
-  install(meta.name);
-
-  const packageDeps = meta['package-deps'];
-
-  packageDeps.forEach( packageDep => {
-    if (packageDep) {
-      if (atom.packages.isPackageDisabled(packageDep)) {
-        if (atom.inDevMode()) console.log(`Enabling package '${packageDep}\'`);
-        atom.packages.enablePackage(packageDep);
-      }
-    }
-  });
-}
 
 function spawnPromise(cmd, args) {
   return new Promise(function (resolve, reject) {
@@ -160,6 +145,6 @@ export function provideBuilder() {
 // This package depends on build, make sure it's installed
 export function activate() {
   if (atom.config.get(`${meta.name}.manageDependencies`) === true) {
-    this.satisfyDependencies();
+    satisfyDependencies();
   }
 }
