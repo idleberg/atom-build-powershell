@@ -1,5 +1,3 @@
-'use babel';
-
 import { EventEmitter } from 'events';
 import { platform } from 'os';
 import { satisfyDependencies } from 'atom-satisfy-dependencies';
