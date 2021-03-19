@@ -1,6 +1,5 @@
 {
-  "parser": "babel-eslint",
-  "extends": "atom-build",
+  "parser": "@babel/eslint-parser",
   "rules": {
     "consistent-return": 0,
     "no-console": 0
