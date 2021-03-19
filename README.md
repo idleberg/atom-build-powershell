@@ -21,10 +21,12 @@ Install `build-powershell` from Atom's [Package Manager](http://flight-manual.at
 Change to your Atom packages directory:
 
 ```powershell
-# Windows Powershell
-cd $Env:USERPROFILE\.atom\packages
+# Powershell
+$ cd $Env:USERPROFILE\.atom\packages
+```
 
-# Windows Command Prompt
+```cmd
+:: Command Prompt
 $ cd %USERPROFILE%\.atom\packages
 ```
 
@@ -74,4 +76,4 @@ Here's a reminder of the default shortcuts you can use with this package:
 
 ## License
 
-This work is licensed under the [The MIT License](LICENSE.md).
+This work is licensed under the [The MIT License](LICENSE).
