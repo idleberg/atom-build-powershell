@@ -9,4 +9,5 @@ yarn.lock
 .eslintcache
 
 # Project specific
+lib/*LICENSE.txt
 todo.md
