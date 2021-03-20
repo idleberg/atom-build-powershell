@@ -1,10 +1,8 @@
+import meta from '../package.json';
 import { EventEmitter } from 'events';
 import { platform } from 'os';
 import { satisfyDependencies } from 'atom-satisfy-dependencies';
 import { spawn } from 'child_process';
-
-// Package settings
-import meta from '../package.json';
 
 export function defaultCustomArguments() {
   if (platform() === 'win32') {
@@ -79,7 +77,7 @@ export function provideBuilder() {
     }
 
     async isEligible() {
-      if (atom.config.get(`${meta.name}.alwaysEligible`) === true) {
+      if (getConfig('alwaysEligible') === true) {
         return true;
       }
 
@@ -114,7 +112,7 @@ export function provideBuilder() {
       args.push('{FILE_ACTIVE}');
 
       // User settings
-      const customArguments = atom.config.get(`${meta.name}.customArguments`).trim().split(' ');
+      const customArguments = getConfig('customArguments').trim().split(' ');
 
       return [
         {
@@ -142,7 +140,7 @@ export function provideBuilder() {
 
 // This package depends on build, make sure it's installed
 export function activate() {
-  if (atom.config.get(`${meta.name}.manageDependencies`) === true) {
-    satisfyDependencies('build-powershell');
+  if (getConfig('manageDependencies') === true) {
+    satisfyDependencies(meta.name);
   }
 }
