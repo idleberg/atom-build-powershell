@@ -1,10 +1,10 @@
-import { configSchema } from './config';
-import { defaultCustomArguments, which } from './util';
+import { configSchema, getConfig } from './config';
 import { EventEmitter } from 'events';
 import { platform } from 'os';
 import { satisfyDependencies } from 'atom-satisfy-dependencies';
-import { spawnSync } from 'child_process';
+import Logger from './log';
 import meta from '../package.json';
+import which from 'which';
 
 export { configSchema as config };
 
@@ -21,16 +21,21 @@ export function provideBuilder() {
     }
 
     isEligible() {
-      if (getConfig('alwaysEligible') === true) {
+      if (getConfig('alwaysEligible')) {
+        Logger.log('Always eligible');
         return true;
       }
 
-      const whichCmd = spawnSync(which(), ['powershell']);
+      const whichOptions = {
+        nothrow: true
+      };
 
-      if (whichCmd.stdout && whichCmd.stdout.toString()) {
+      if (Boolean(which.sync('powershell', whichOptions)) || Boolean(which.sync('pwsh', whichOptions))) {
+        Logger.log('Build provider is eligible');
         return true;
       }
 
+      Logger.error('Build provider isn\'t eligible');
       return false;
     }
 
@@ -82,9 +87,15 @@ export function provideBuilder() {
   };
 }
 
-// This package depends on build, make sure it's installed
 export function activate() {
+  Logger.log('Activating package');
+
+  // This package depends on build, make sure it's installed
   if (getConfig('manageDependencies') === true) {
     satisfyDependencies(meta.name);
   }
+}
+
+export function deactivate() {
+  Logger.log('Deactivating package');
 }

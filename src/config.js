@@ -1,3 +1,4 @@
+import { defaultCustomArguments } from './util';
 import meta from '../package.json';
 
 export const configSchema = {
