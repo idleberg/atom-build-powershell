@@ -1,68 +1,12 @@
-import meta from '../package.json';
+import { configSchema } from './config';
+import { defaultCustomArguments, which } from './util';
 import { EventEmitter } from 'events';
 import { platform } from 'os';
 import { satisfyDependencies } from 'atom-satisfy-dependencies';
-import { spawn } from 'child_process';
+import { spawnSync } from 'child_process';
+import meta from '../package.json';
 
-export function defaultCustomArguments() {
-  if (platform() === 'win32') {
-    return '-NoLogo -NonInteractive -NoProfile -ExecutionPolicy Unrestricted -File {FILE_ACTIVE}';
-  }
-
-  return '-NoLogo -NonInteractive -NoProfile -File {FILE_ACTIVE}';
-}
-
-export const config = {
-  customArguments: {
-    title: 'Custom Arguments',
-    description: 'Specify your preferred arguments for `powershell`, supports [replacement](https://github.com/noseglid/atom-build#replacement) placeholders',
-    type: 'string',
-    default: defaultCustomArguments(),
-    order: 0
-  },
-  manageDependencies: {
-    title: 'Manage Dependencies',
-    description: 'When enabled, third-party dependencies will be installed automatically',
-    type: 'boolean',
-    default: true,
-    order: 1
-  },
-  alwaysEligible: {
-    title: 'Always Eligible',
-    description: 'The build provider will be available in your project, even when not eligible',
-    type: 'boolean',
-    default: false,
-    order: 2
-  }
-};
-
-function spawnPromise(cmd, args) {
-  return new Promise(function (resolve, reject) {
-    const child = spawn(cmd, args);
-    let stdOut;
-    let stdErr;
-
-    child.stdout.on('data', function (line) {
-      stdOut += line.toString().trim();
-    });
-
-    child.stderr.on('data', function (line) {
-      stdErr += line.toString().trim();
-    });
-
-    child.on('close', function (code) {
-      if (code === 0) {
-        resolve(stdOut);
-      }
-
-      reject(stdErr);
-    });
-  });
-}
-
-export function which() {
-  return (platform() === 'win32') ? 'where' : 'which';
-}
+export { configSchema as config };
 
 export function provideBuilder() {
   return class PowershellProvider extends EventEmitter {
@@ -76,12 +20,12 @@ export function provideBuilder() {
       return 'PowerShell';
     }
 
-    async isEligible() {
+    isEligible() {
       if (getConfig('alwaysEligible') === true) {
         return true;
       }
 
-      const whichCmd = await spawnPromise(which(), ['powershell']);
+      const whichCmd = spawnSync(which(), ['powershell']);
 
       if (whichCmd.stdout && whichCmd.stdout.toString()) {
         return true;
