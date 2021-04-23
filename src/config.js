@@ -1,5 +1,13 @@
-import { defaultCustomArguments } from './util';
+import { platform } from 'os';
 import meta from '../package.json';
+
+function defaultCustomArguments() {
+  if (platform() === 'win32') {
+    return '-NoLogo -NonInteractive -NoProfile -ExecutionPolicy Unrestricted -File {FILE_ACTIVE}';
+  }
+
+  return '-NoLogo -NonInteractive -NoProfile -File {FILE_ACTIVE}';
+}
 
 export const configSchema = {
   customArguments: {

@@ -29,7 +29,7 @@
     "atom": ">=1.0.0 <2.0.0"
   },
   "activationHooks": [
-    "language-powershell:grammar-used"
+    "core:loaded-shell-environment"
   ],
   "providedServices": {
     "builder": {
@@ -40,7 +40,14 @@
     }
   },
   "package-deps": [
-    "buildium"
+    [
+      {
+        "name": "buildium"
+      },
+      {
+        "name": "build"
+      }
+    ]
   ],
   "dependencies": {
     "@atxm/developer-console": "^0.5.0",
