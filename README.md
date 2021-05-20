@@ -4,7 +4,7 @@
 [![apm](https://flat.badgen.net/apm/v/build-powershell)](https://atom.io/packages/build-powershell)
 [![apm](https://flat.badgen.net/apm/dl/build-powershell)](https://atom.io/packages/build-powershell)
 [![CircleCI](https://flat.badgen.net/circleci/github/idleberg/atom-build-powershell)](https://circleci.com/gh/idleberg/atom-build-powershell)
-[![David](https://flat.badgen.net/david/dep/idleberg/atom-build-powershell)](https://david-dm.org/idleberg/atom-build-powershell)
+[![David](https://flat.badgen.net/david/dev/idleberg/atom-build-powershell)](https://david-dm.org/idleberg/atom-build-powershell?type=dev)
 
 [Atom Build](https://atombuild.github.io/) provider for Microsoft PowerShell, runs PowerShell scripts. Supports the [linter](https://atom.io/packages/linter) package for error highlighting.
 
