@@ -1,5 +1,5 @@
 import { platform } from 'os';
-import meta from '../package.json';
+import { name } from '../package.json';
 
 function defaultCustomArguments() {
   if (platform() === 'win32') {
@@ -34,5 +34,5 @@ export const configSchema = {
 };
 
 export function getConfig(key) {
-  return atom.config.get(`${meta.name}.${key}`);
+  return atom.config.get(`${name}.${key}`);
 }
